@@ -14,7 +14,7 @@ const Register = () => {
     const handleChanges = (e) => {
         setValues({...values, [e.target.name]:e.target.value})
     }
-    const handleSumbit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             const response = await axios.post('http://localhost:4000/auth/register', values)
@@ -30,7 +30,7 @@ const Register = () => {
         <div className='flex justify-center items-center h-screen'>
         <div className='shadow-lg px-8 py-5 border w-96'>
             <h2 className='text-lg font-bold mb-4'>Register</h2>
-            <form onSubmit={handleSumbit}>
+            <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label htmlFor="username" className='block text-gray-700'>Username</label>
                     <input type="text" placeholder='Enter Username' className='w-full px-3 py-2 border'
@@ -41,8 +41,8 @@ const Register = () => {
 
                 <div className="mb-4">
                     <label htmlFor="mobile" className='block text-gray-700'>Contact Number</label>
-                    <input type="int" placeholder='Enter Mobile Number' className='w-full px-3 py-2 border'
-                    name="username" onChange={handleChanges}/>
+                    <input type="tel" placeholder='Enter Mobile Number' className='w-full px-3 py-2 border'
+                    name="mobile" onChange={handleChanges}/>
                 </div>
 
                 <div className="mb-4">
