@@ -44,7 +44,6 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ id: rows[0].id }, process.env.JWT_KEY, {
       expiresIn: "3h",
     }); 
-
     return res.status(201).json({ token: token });
   } catch (err) {
     return res.status(500).json(err.message);
